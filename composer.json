@@ -1,0 +1,13 @@
+{
+    "name": "leit/docker-nginx",
+    "description": "Docker for itea_hw",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Leit040",
+            "email": "leit2040@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

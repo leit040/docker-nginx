@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "84:80"
+      - "4443:443"
+    volumes:
+      - ./docker/nginx/hosts:/etc/nginx/conf.d
+      - ./:/var/www
+    links:
+      - php
+  php:
+    image: docker.io/bitnami/php-fpm:8.0
+    links:
+      - mysql
+    volumes:
+      - ./:/var/www
+  mysql:
+    image: mysql
+    ports:
+      - "3309:3306"
+    volumes:
+      - ./docker/mysql/etc/mysql:/etc/mysql
+      - ./docker/mysql/logs/mysql:/var/log/mysql
+      - ./docker/mysql/mysql-files:/var/lib/mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: JHJhsus
+      MYSQL_DATABASE: backend_db
