@@ -1,5 +1,5 @@
 {
-    "name": "leit/docker-nginx",
+    "name": "leit040/docker-nginx",
     "description": "Docker for itea_hw",
     "type": "project",
     "authors": [
