@@ -8,7 +8,7 @@ services:
       - "4443:443"
     volumes:
       - ./docker/nginx/hosts:/etc/nginx/conf.d
-      - ./:/var/www
+      - ../../../:/var/www
     links:
       - php
   php:
@@ -16,7 +16,7 @@ services:
     links:
       - mysql
     volumes:
-      - ./:/var/www
+      - ../../../:/var/www
   mysql:
     image: mysql
     ports:
